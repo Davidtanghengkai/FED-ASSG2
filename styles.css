@@ -1,63 +1,66 @@
+/* Basic styles for the page */
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #74b9ff, #0984e3);
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.login-container {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    margin: 0;
+    background-color: beige;
+  }
+  
+  .container {
     text-align: center;
-    width: 100%;
-    max-width: 400px;
-}
-
-h1 {
-    margin-bottom: 1.5rem;
-    color: #2d3436;
-}
-
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 0.75rem;
-    margin: 0.5rem 0;
-    border: 1px solid #dcdde1;
-    border-radius: 8px;
-    font-size: 1rem;
-}
-
-button {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #0984e3;
-    color: white;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #74b9ff;
-}
-
-.forgot-password {
-    margin-top: 1rem;
-}
-
-.forgot-password a {
-    color: #0984e3;
-    text-decoration: none;
-}
-
-.forgot-password a:hover {
-    text-decoration: underline;
-}
+  }
+  
+  /* Logo section */
+  .logo {
+    width: 800px;
+    height: 400px;
+    background-color: red;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  
+  /* Button container styles */
+  .button-container {
+    display: flex;
+    flex-direction: column; /* Align buttons vertically */
+    align-items: center;
+    gap: 15px; /* Space between buttons */
+  }
+  
+  /* Style for the <a> tags (acting as buttons) */
+  a {
+    text-decoration: none; /* Removes the default underline */
+    height: 20px;
+    width: 400px;
+    color: white; /* Text color */
+    background-color: #007BFF; /* Blue background */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    padding: 12px 20px; /* Padding to make the link look like a button */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    transition: background-color 0.3s ease; /* Smooth background color change on hover */
+  }
+  
+  /* Hover effect for links */
+  a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 600px) {
+    .container {
+      padding: 20px;
+    }
+    .logo {
+      width: 80px;
+      height: 80px;
+    }
+    .button-container {
+      gap: 10px; /* Adjust the gap between buttons on smaller screens */
+    }
+  }
+  

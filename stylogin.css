@@ -1,0 +1,83 @@
+/* Basic styles for the page */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: beige; /* Set background color to beige */
+}
+
+.login-container {
+  background-color: white; /* White background for the form */
+  border: 2px solid black; /* Black border */
+  border-radius: 10px; /* Curved corners */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for better visibility */
+  width: 300px; /* Set a fixed width */
+  text-align: center; /* Center the text inside the container */
+}
+
+h1 {
+  margin-bottom: 20px; /* Space between the title and form */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between form elements */
+}
+
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="button"] {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="button"]:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.forgot-password {
+  margin-top: 15px;
+}
+
+.forgot-password a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+#login-msg {
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#login-msg.success {
+  color: green;
+  background-color: #d4edda;
+}
+
+#login-msg.error {
+  color: red;
+  background-color: #f8d7da;
+}
