@@ -15,11 +15,13 @@ body {
   
   /* Logo section */
   .logo {
-    width: 800px;
-    height: 400px;
-    background-color: red;
-    margin-bottom: 20px;
-    display: inline-block;
+    width: 500px;
+    height: 350px;
+    background-image: url('images/mainlogo.png');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px; /* Adds space between logo and box */
+    display: block;
   }
   
   /* Button container styles */
@@ -64,3 +66,71 @@ body {
     }
   }
   
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Homebar Styling */
+.homebar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Moves the buttons and logo to the left */
+  background-color: #f8f8f8; /* Light gray background */
+  padding: 10px 20px;
+  border-bottom: 2px solid #ddd; /* Optional border below the homebar */
+  position: fixed; /* Keeps it at the top of the viewport */
+  top: 0; /* Ensures it starts at the top */
+  left: 0; /* Ensures it starts at the left edge */
+  width: 100%; /* Stretches the entire width of the viewport */
+  z-index: 1000; /* Keeps it above other content */
+}
+
+/* Logo Section (Renamed to homebar-logo) */
+.homebar-logo {
+  width: 100px; /* Width of the logo */
+  height: 100px; /* Makes the logo box fill the height of the homebar */
+  background-color: #ccc; /* Placeholder color */
+  background-image: url('images/mainlogo.jpg'); /* Replace with your logo path */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid #ddd; /* Optional border for the logo box */
+}
+
+/* Navigation Buttons Section */
+.nav-buttons {
+  display: flex;
+  gap: 35px; /* Spacing between buttons */
+  margin-left: 300px; /* Space between the logo and buttons */
+}
+
+/* Navigation Buttons */
+.nav-btn {
+  background-color: #007bff; /* Blue color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.nav-btn:active {
+  background-color: #003f7f; /* Even darker blue on click */
+}
+
+/* Page Content */
+.content {
+  padding: 20px;
+  font-size: 16px;
+  margin-top: 100px; /* Adds space below the fixed homebar to prevent content overlap */
+}
