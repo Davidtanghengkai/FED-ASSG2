@@ -1,7 +1,7 @@
 //[STEP 0]: Make sure our document is A-OK
 document.addEventListener("DOMContentLoaded", function () {
     // What kind of interface we want at the start 
-    const APIKEY = "677b6e8ea2f1fd5116fd925f";
+    const APIKEY = "6796f31df9d2bb1fcb181e26";
     getContacts();
     document.getElementById("update-contact-container").style.display = "none";
     document.getElementById("add-update-msg").style.display = "none";
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   
       //[STEP 5]: Send our AJAX request over to the DB and print response of the RESTDB storage to console.
-      fetch("https://interactivedev-cd9e.restdb.io/rest/contact", settings)
+      fetch("https://emailauthenticator-50e0.restdb.io/rest/email")
         .then(response => response.json())
         .then(data => {
           console.log(data);
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
       //[STEP 8]: Make our AJAX calls
       // Once we get the response, we modify our table content by creating the content internally. We run a loop to continuously add on data
       // RESTDb/NoSql always adds in a unique id for each data; we tap on it to have our data and place it into our links 
-      fetch("https://interactivedev-cd9e.restdb.io/rest/contact", settings)
+      fetch("https://emailauthenticator-50e0.restdb.io/rest/email")
         .then(response => response.json())
         .then(response => {
           let content = "";
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   
       //[STEP 13a]: Send our AJAX request and hide the update contact form
-      fetch(`https://interactivedev-cd9e.restdb.io/rest/contact`, settings)
+      fetch(`https://emailauthenticator-50e0.restdb.io/rest/email`)
         .then(response => response.json())
         .then(data => {
           console.log(data);
