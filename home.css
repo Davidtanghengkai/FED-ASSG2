@@ -1,0 +1,39 @@
+/* Topbar Styles */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: green; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    width: 100%;
+  }
+  
+  .logo-img {
+    height: 40px; /* Adjust logo size */
+  }
+  
+  .navbar a {
+    color: white; /* White text for navbar links */
+    background-color: transparent;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  a {
+    text-decoration: none; /* Removes the default underline */
+    height: 20px;
+    width: 400px;
+    color: white; /* Text color */
+    background-color: #007BFF; /* Blue background */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    padding: 12px 20px; /* Padding to make the link look like a button */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    transition: background-color 0.3s ease; /* Smooth background color change on hover */
+  }
