@@ -1,49 +1,62 @@
-// Dictionary to store email-password pairs
-let users = {};
+const APIKEY = "6796f31df9d2bb1fcb181e26";
+const API_URL = "https://emailauthenticator-50e0.restdb.io/rest/email";
 
-// Function to handle the registration process
-function registerUser() {
-  // Get the email, password, and confirm password values from the form
-  let email = document.getElementById("login-email").value;
-  let password = document.getElementById("login-password").value;
-  let confirmPassword = document.getElementsByName("Confirm-password")[0].value;
-  
-  // Check if the email already exists in the users dictionary
-  if (users[email]) {
-    displayMessage("This email is already registered!", "error");
+document.getElementById("login-submit").addEventListener("click", registerUser);
+
+async function registerUser() {
+  const email = document.getElementById("login-email").value.trim();
+  const password = document.getElementById("login-password").value;
+  const confirmPassword = document.getElementById("login-confirm-password").value;
+  const msgDiv = document.getElementById("login-msg");
+
+  msgDiv.style.display = "none";
+  msgDiv.classList.remove("success", "error");
+
+  if (!email || !password || !confirmPassword) {
+    displayMessage("All fields are required!", "error");
     return;
   }
 
-  // Check if the passwords match
   if (password !== confirmPassword) {
     displayMessage("Passwords do not match!", "error");
     return;
   }
 
-  // Store the email and password in the dictionary
-  users[email] = password;
+  try {
+    const response = await fetch(`${API_URL}?q={\"Email\":\"${email}\"}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "x-apikey": APIKEY,
+        "Cache-Control": "no-cache"
+      }
+    });
+    const data = await response.json();
 
-  // Optionally, show a success message
-  displayMessage("Registration successful!", "success");
+    if (data.length > 0) {
+      displayMessage("This email is already registered!", "error");
+      return;
+    }
 
-  // Reset the form after successful registration (optional)
-  document.getElementById("login-form").reset();
+    await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-apikey": APIKEY,
+        "Cache-Control": "no-cache"
+      },
+      body: JSON.stringify({ Email: email, Password: password })
+    });
+
+    document.getElementById("login-form").reset();
+  } catch (error) {
+    displayMessage("An error occurred. Please try again later.", "error");
+  }
 }
 
-// Function to display messages (either success or error)
 function displayMessage(message, type) {
   const msgDiv = document.getElementById("login-msg");
   msgDiv.style.display = "block";
   msgDiv.textContent = message;
-  if (type === "success") {
-    msgDiv.style.color = "green";
-    
-  } else {
-    msgDiv.style.color = "red";
-  }
+  msgDiv.classList.add(type);
 }
-
-// Event listener for the registration button
-document.getElementById("login-submit").addEventListener("click", function() {
-  registerUser();
-});
