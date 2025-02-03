@@ -32,37 +32,39 @@ loginButton.addEventListener('click', function (e) {
             'Content-Type': 'application/json'
         }
     })
-        .then(response => response.json())
-        .then(data => {
-            if (data.length === 0) {
-                // If no user found with the provided email
-                showMessage("No account found with this email address.", "error");
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.length === 0) {
+            // If no user found with the provided email
+            showMessage("No account found with this email address.", "error");
+        } else {
+            const user = data[0]; // Assuming only one user exists with the email
+            if (user.password === password) {
+                // If passwords match, login is successful
+                showMessage("Login successful!", "success");
+                // Optionally, store user data or redirect to another page
+                // localStorage.setItem('user', JSON.stringify(user)); 
+                window.location.href = "dashboard.html"; // Redirect to a dashboard page or home
             } else {
-                const user = data[0]; // Assuming only one user exists with the email
-                if (user.password === password) {
-                    // If passwords match, login is successful
-                    showMessage("Login successful!", "success");
-                    // Optionally, store user data or redirect to another page
-                    // localStorage.setItem('user', JSON.stringify(user)); 
-                    window.location.href = "dashboard.html"; // Redirect to a dashboard page or home
-                } else {
-                    // If passwords don't match
-                    showMessage("Incorrect password. Please try again.", "error");
-                }
+                // If passwords don't match
+                showMessage("Incorrect password. Please try again.", "error");
             }
-        })
-// In your fetch call
-.catch(error => {
-  console.error("Error during login request:", error);
-  console.error("Error message:", error.message);
-  console.error("Error stack:", error.stack);
-  showMessage("An error occurred. Please try again later.", "error");
+        }
+    })
+    .catch(error => {
+        // Catch and log the error in detail
+        console.error("Error during login request:");
+        console.error(`Error message: ${error.message}`);
+        console.error(`Error stack: ${error.stack}`);
+        showMessage("An error occurred. Please try again later.", "error");
+    });
+
 });
-
-      });
-      
-        
-
 
 // Function to display success/error messages
 function showMessage(message, type) {
@@ -74,3 +76,13 @@ function showMessage(message, type) {
         loginMessage.className = 'msg error'; // 'error' class for failure messages
     }
 }
+
+// Catch any uncaught errors globally (in case something goes wrong outside the try-catch in the event listener)
+window.onerror = function (message, source, lineno, colno, error) {
+    console.error(`Global Error: ${message}`);
+    console.error(`Source: ${source}`);
+    console.error(`Line: ${lineno}, Column: ${colno}`);
+    console.error(`Stack trace: ${error.stack}`);
+    showMessage("An unexpected error occurred. Please try again later.", "error");
+    return true; // Prevent the browser default error handling
+};
