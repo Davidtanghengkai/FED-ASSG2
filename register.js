@@ -49,6 +49,7 @@ async function registerUser() {
     });
 
     document.getElementById("login-form").reset();
+    displayMessage("Your account has been succesfully registered.","success")
   } catch (error) {
     displayMessage("An error occurred. Please try again later.", "error");
   }
