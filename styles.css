@@ -2,70 +2,99 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: beige;
-  }
-  
+    background-color: beige; /* Set background color to beige */
+}
+
+/* Topbar Styles */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: green; /* Green background */
+  color: white; /* White text */
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.logo-img {
+  height: 40px; /* Adjust logo size */
+}
+
+.navbar a {
+  color: white; /* White text for navbar links */
+  background-color: transparent;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Container with logo and buttons */
+.container {
+  text-align: center;
+  margin-top: 80px; /* Adds space below the topbar */
+}
+
+/* Logo section */
+.logo {
+  width: 500px;
+  height: 350px;
+  background-image: url('images/mainlogo.png');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px; /* Adds space between logo and box */
+  display: block;
+}
+
+/* Button container styles */
+.button-container {
+  display: flex;
+  flex-direction: column; /* Align buttons vertically */
+  align-items: center;
+  gap: 15px; /* Space between buttons */
+}
+
+/* Style for the <a> tags (acting as buttons) */
+a {
+  text-decoration: none; /* Removes the default underline */
+  height: 20px;
+  width: 400px;
+  color: white; /* Text color */
+  background-color: #007BFF; /* Blue background */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  padding: 12px 20px; /* Padding to make the link look like a button */
+  border-radius: 5px; /* Rounded corners */
+  text-align: center; /* Center the text */
+  transition: background-color 0.3s ease; /* Smooth background color change on hover */
+}
+
+/* Hover effect for links */
+a:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
   .container {
-    text-align: center;
+    padding: 20px;
   }
-  
-  /* Logo section */
   .logo {
-    width: 500px;
-    height: 350px;
-    background-image: url('images/mainlogo.png');
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 20px; /* Adds space between logo and box */
-    display: block;
+    width: 80px;
+    height: 80px;
   }
-  
-  /* Button container styles */
   .button-container {
-    display: flex;
-    flex-direction: column; /* Align buttons vertically */
-    align-items: center;
-    gap: 15px; /* Space between buttons */
+    gap: 10px; /* Adjust the gap between buttons on smaller screens */
   }
-  
-  /* Style for the <a> tags (acting as buttons) */
-  a {
-    text-decoration: none; /* Removes the default underline */
-    height: 20px;
-    width: 400px;
-    color: white; /* Text color */
-    background-color: #007BFF; /* Blue background */
-    font-size: 16px; /* Font size */
-    font-weight: bold; /* Bold text */
-    padding: 12px 20px; /* Padding to make the link look like a button */
-    border-radius: 5px; /* Rounded corners */
-    text-align: center; /* Center the text */
-    transition: background-color 0.3s ease; /* Smooth background color change on hover */
-  }
-  
-  /* Hover effect for links */
-  a:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 600px) {
-    .container {
-      padding: 20px;
-    }
-    .logo {
-      width: 80px;
-      height: 80px;
-    }
-    .button-container {
-      gap: 10px; /* Adjust the gap between buttons on smaller screens */
-    }
-  }
-  
+}
+
 /* General Reset */
 body, html {
   margin: 0;
@@ -74,63 +103,9 @@ body, html {
   box-sizing: border-box;
 }
 
-/* Homebar Styling */
-.homebar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* Moves the buttons and logo to the left */
-  background-color: #f8f8f8; /* Light gray background */
-  padding: 10px 20px;
-  border-bottom: 2px solid #ddd; /* Optional border below the homebar */
-  position: fixed; /* Keeps it at the top of the viewport */
-  top: 0; /* Ensures it starts at the top */
-  left: 0; /* Ensures it starts at the left edge */
-  width: 100%; /* Stretches the entire width of the viewport */
-  z-index: 1000; /* Keeps it above other content */
-}
-
-/* Logo Section (Renamed to homebar-logo) */
-.homebar-logo {
-  width: 100px; /* Width of the logo */
-  height: 100px; /* Makes the logo box fill the height of the homebar */
-  background-color: #ccc; /* Placeholder color */
-  background-image: url('images/mainlogo.jpg'); /* Replace with your logo path */
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 1px solid #ddd; /* Optional border for the logo box */
-}
-
-/* Navigation Buttons Section */
-.nav-buttons {
-  display: flex;
-  gap: 35px; /* Spacing between buttons */
-  margin-left: 300px; /* Space between the logo and buttons */
-}
-
-/* Navigation Buttons */
-.nav-btn {
-  background-color: #007bff; /* Blue color */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 30px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.nav-btn:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-}
-
-.nav-btn:active {
-  background-color: #003f7f; /* Even darker blue on click */
-}
-
 /* Page Content */
 .content {
   padding: 20px;
   font-size: 16px;
-  margin-top: 100px; /* Adds space below the fixed homebar to prevent content overlap */
+  margin-top: 100px; /* Adds space below the fixed topbar to prevent content overlap */
 }
