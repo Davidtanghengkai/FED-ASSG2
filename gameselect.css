@@ -1,0 +1,97 @@
+/* Basic styles for the page */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: beige; /* Set background color to beige */
+  }
+  
+  /* Topbar Styles */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: green;
+    color: white;
+    padding: 15px 20px; /* Reduce padding to fit content */
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Prevents width overflow */
+  }
+  
+  
+  .logo-img {
+    height: 40px; /* Adjust logo size */
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px; /* Spacing between links */
+    flex-wrap: nowrap; /* Prevents wrapping */
+    overflow: hidden;
+  }
+  
+  
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px; /* Add padding to prevent overlap */
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  .navbar .text {
+  font-size: 16px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  flex-grow: 1; /* Fill remaining space */
+  height: 100%;
+}
+
+.navbar text{
+    
+        font-size: 16px;
+        color: #333;
+        white-space: nowrap;
+        overflow: hidden;
+        
+        display: flex;
+        align-items: center; /* Center text vertically */
+        justify-content: center; /* Center text horizontally */
+        flex-grow: 1; /* Fill remaining space */
+        height: 100%;
+      
+}
+.navbar a{
+    
+        text-decoration: none; /* Removes the default underline */
+        height: 20px;
+        width: 400px;
+        color: white; /* Text color */
+        font-size: 16px; /* Font size */
+        font-weight: bold; /* Bold text */
+        padding: 12px 20px; /* Padding to make the link look like a button */
+        border-radius: 5px; /* Rounded corners */
+        text-align: center; /* Center the text */
+        transition: background-color 0.3s ease; /* Smooth background color change on hover */
+      
+    
+}
