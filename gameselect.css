@@ -43,7 +43,7 @@ body {
   
   
   .navbar a {
-    color: white;
+    color: white;   
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
@@ -95,3 +95,83 @@ body {
       
     
 }
+
+/* Image Slider Container */
+.image-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw; /* Adjust width as needed */
+    height: 60vh; /* Adjust height as needed */
+  }
+  
+  /* Image Box */
+  .image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    background-color: white;
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  /* Arrow Buttons */
+  .arrow {
+    background: none;
+    border: none;
+    font-size: 40px;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .left-arrow {
+    position: absolute;
+    left: 10px;
+  }
+  
+  .right-arrow {
+    position: absolute;
+    right: 10px;
+  }
+  
+  .arrow:hover {
+    color: gray;
+  }
+  
+
+  /* Image Button */
+.image-button {
+    display: block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background-color 0.3s ease;
+  }
+  
+  .image-button:hover {
+    background-color: darkblue;
+  }
+  
