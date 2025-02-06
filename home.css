@@ -1,57 +1,54 @@
+html, body {
+  overflow-x: hidden;
+}
+
+
+
 /* Basic styles for the page */
 body {
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   background-color: beige; /* Set background color to beige */
 }
 
 /* Topbar Styles */
 .topbar {
+  position: relative;           /* Establishes a containing block for absolutely positioned children */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;      /* Centers the main content (logo and navbar) */
   align-items: center;
   background-color: green;
   color: white;
-  padding: 15px 20px; /* Reduce padding to fit content */
+  padding: 15px 50px;
   width: 100%;
-  height: 80px;
-  position: fixed;
-  top: 0;
-  left: 0;
+  height: 50px;
   z-index: 1000;
-  box-sizing: border-box; /* Prevents width overflow */
 }
-
 
 .logo-img {
   height: 40px; /* Adjust logo size */
 }
 
-.navbar {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 15px; /* Spacing between links */
-  flex-wrap: nowrap; /* Prevents wrapping */
-  overflow: hidden;
-}
-
-
-
 .navbar a {
-  color: white;
+  color: white; /* White text for navbar links */
+  background-color: transparent;
   text-decoration: none;
+  margin: 0 15px;
   font-size: 16px;
-  font-weight: bold;
-  padding: 5px 10px; /* Add padding to prevent overlap */
 }
 
 .navbar a:hover {
   text-decoration: underline;
+}
+
+/* Container with logo and buttons */
+.container {
+  text-align: center;
+  margin-top: 80px; /* Adds space below the topbar */
 }
 
 
@@ -78,7 +75,7 @@ body {
 
 .gamesbar a {
     display: inline-block;
-    width: 1200px; /* Set a fixed width */
+    width: 1000px; /* Set a fixed width */
     padding: 20px; /* Increase padding */
     background-color: black; /* Black background */
     color: white; /* White text */
@@ -126,8 +123,8 @@ body {
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 10px;
-  width: 1250px; /* Fixed width */
-  height: 125px; /* Fixed height */
+  width: 1100px; /* Fixed width */
+  height: 150px; /* Fixed height */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.2s ease;
@@ -138,10 +135,11 @@ body {
 .photo {
   
   width: 275px; /* Adjust size */
-  height: 125px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: 20px;
 }
 
 .photo img {
@@ -151,7 +149,8 @@ body {
 }
 
 .text {
-  font-size: 16px;
+  font-size: 26px; /* Increased font size */
+  font-weight: bold; /* Bolder font */
   color: #333;
   white-space: nowrap;
   overflow: hidden;
@@ -162,5 +161,4 @@ body {
   flex-grow: 1; /* Fill remaining space */
   height: 100%;
 }
-
 
