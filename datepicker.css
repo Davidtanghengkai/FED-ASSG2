@@ -10,11 +10,15 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
     
   }
   
   .datepicker-container {
+    display: flex;
     position: relative;
+    align-self: flex-start;
+    padding-left: 500px;
   }
   
   .datepicker {
@@ -26,6 +30,7 @@
     border: 1px solid black;
     display: flex;
     flex-direction: column;
+    
   }
   
   .datepicker button {
@@ -40,6 +45,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
   
   .days,
