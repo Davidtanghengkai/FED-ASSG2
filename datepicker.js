@@ -1,31 +1,47 @@
-// Prices for child, adult, and senior
-const priceChild = 29;   // Price per child ticket
-const priceAdult = 49;   // Price per adult ticket
-const priceSenior = 39;  // Price per senior ticket
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Script loaded and running!"); // Debugging line
 
-// Get DOM elements for the select dropdowns and the price display h1
-const childSelect = document.getElementById('child-count');
-const adultSelect = document.getElementById('adult-count');
-const elderlySelect = document.getElementById('elderly-count');
-const priceDisplay = document.getElementById('price-display');
+    // Define ticket prices
+    const PRICES = {
+        child: 29,
+        adult: 49,
+        senior: 39
+    };
 
-// Function to calculate total price
-function calculateTotalPrice() {
-    const childCount = parseInt(childSelect.value, 10);
-    const adultCount = parseInt(adultSelect.value, 10);
-    const elderlyCount = parseInt(elderlySelect.value, 10);
+    // Get references to dropdowns and total price display
+    const childSelect = document.getElementById("child-count");
+    const adultSelect = document.getElementById("adult-count");
+    const seniorSelect = document.getElementById("elderly-count");
+    const totalPriceText = document.getElementById("total-price-text");
 
-    // Calculate the total price
-    const totalPrice = (childCount * priceChild) + (adultCount * priceAdult) + (elderlyCount * priceSenior);
+    if (!childSelect || !adultSelect || !seniorSelect || !totalPriceText) {
+        console.error("One or more elements are missing from the HTML.");
+        return; // Stops execution if elements are missing
+    }
 
-    // Display the total price in the h1 tag
-    priceDisplay.textContent = `$${totalPrice}`;
-}
+    // Function to update total price
+    function updateTotalPrice() {
+        console.log("Updating total price..."); // Debugging line
 
-// Add event listeners to each select dropdown
-childSelect.addEventListener('change', calculateTotalPrice);
-adultSelect.addEventListener('change', calculateTotalPrice);
-elderlySelect.addEventListener('change', calculateTotalPrice);
+        // Get selected ticket quantities
+        const numChildren = parseInt(childSelect.value) || 0;
+        const numAdults = parseInt(adultSelect.value) || 0;
+        const numSeniors = parseInt(seniorSelect.value) || 0;
 
-// Call the function once on page load to initialize the price
-calculateTotalPrice();
+        // Calculate total price
+        const totalPrice = (numChildren * PRICES.child) +
+                           (numAdults * PRICES.adult) +
+                           (numSeniors * PRICES.senior);
+
+        // Update the price display
+        totalPriceText.innerHTML = `Price: $${totalPrice}`;
+    }
+
+    // Add event listeners to dropdowns
+    childSelect.addEventListener("change", updateTotalPrice);
+    adultSelect.addEventListener("change", updateTotalPrice);
+    seniorSelect.addEventListener("change", updateTotalPrice);
+
+    // Initialize total price
+    updateTotalPrice();
+});
