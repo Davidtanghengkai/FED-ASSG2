@@ -1,22 +1,31 @@
-// Select the necessary elements
-const dateInput = document.querySelector(".date-input");
-const datepicker = document.querySelector(".datepicker");
+// Prices for child, adult, and senior
+const priceChild = 29;   // Price per child ticket
+const priceAdult = 49;   // Price per adult ticket
+const priceSenior = 39;  // Price per senior ticket
 
-// Add an event listener to show the datepicker when the input is clicked
-dateInput.addEventListener("click", () => {
-  datepicker.hidden = false; // Show the datepicker
-});
+// Get DOM elements for the select dropdowns and the price display h1
+const childSelect = document.getElementById('child-count');
+const adultSelect = document.getElementById('adult-count');
+const elderlySelect = document.getElementById('elderly-count');
+const priceDisplay = document.getElementById('price-display');
 
-// Add a listener to close the datepicker when the 'Cancel' button is clicked
-const cancelBtn = datepicker.querySelector(".cancel");
-cancelBtn.addEventListener("click", () => {
-  datepicker.hidden = true; // Hide the datepicker
-});
+// Function to calculate total price
+function calculateTotalPrice() {
+    const childCount = parseInt(childSelect.value, 10);
+    const adultCount = parseInt(adultSelect.value, 10);
+    const elderlyCount = parseInt(elderlySelect.value, 10);
 
-// Add a listener to close the datepicker when the 'Apply' button is clicked
-const applyBtn = datepicker.querySelector(".apply");
-applyBtn.addEventListener("click", () => {
-  // Set the selected date to the input field (this logic can be expanded)
-  dateInput.value = "Selected Date"; // Placeholder for the selected date
-  datepicker.hidden = true; // Hide the datepicker after selection
-});
+    // Calculate the total price
+    const totalPrice = (childCount * priceChild) + (adultCount * priceAdult) + (elderlyCount * priceSenior);
+
+    // Display the total price in the h1 tag
+    priceDisplay.textContent = `$${totalPrice}`;
+}
+
+// Add event listeners to each select dropdown
+childSelect.addEventListener('change', calculateTotalPrice);
+adultSelect.addEventListener('change', calculateTotalPrice);
+elderlySelect.addEventListener('change', calculateTotalPrice);
+
+// Call the function once on page load to initialize the price
+calculateTotalPrice();

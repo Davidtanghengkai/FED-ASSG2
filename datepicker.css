@@ -19,7 +19,7 @@
     height :80px;
     z-index: 1000;
 }
-a {
+.topbar a {
   text-decoration: none; /* Removes the default underline */
   height: 20px;
   width: 400px;
@@ -127,7 +127,12 @@ a {
     flex-grow: 1;
     justify-items: center; /* Center the buttons */
   }
-  
+
+  .dates button:hover {
+    background-color: lightgray;
+    color: white; /* Ensures text remains visible */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
   .days span {
     font-size: 16px;
     font-weight: 600;
@@ -143,15 +148,14 @@ a {
     align-items: center;
   }
   
-  .dates button.today {
-    background: lightgray;
-    color: white;
-  }
+
   
   .dates button.selected {
     background: black;
     color: white;
   }
+
+
   
   .datepicker-header {
     display: flex;
@@ -208,17 +212,27 @@ a {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 300px; /* Set a fixed width for the pax-select box */
+    width: 300px; /* Set a fixed width */
     padding: 20px;
     border: 1px solid black;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; /* Add spacing below the pax select */
-  }
+    margin-bottom: 20px;
+}
+
+.pax-select div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Aligns elements horizontally */
+    align-items: center; /* Centers elements vertically */
+    width: 100%;
+}
 
 .pax-select label {
     font-size: 16px;
     font-weight: 600;
+    text-align: right;
+    width: 100px; /* Adjust width to balance layout */
 }
 
 .pax-select select {
@@ -227,7 +241,24 @@ a {
     border-radius: 5px;
     width: 60px;
     border: 1px solid #ccc;
+    text-align: center;
 }
+
+.pax-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px; /* Adds space above the price section */
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.pax-price h1 {
+    font-size: 20px; /* Adjusts h1 size */
+    margin: 0; /* Ensures it doesn’t break layout */
+}
+
 
 
 
@@ -252,11 +283,30 @@ a {
   font-weight: 600;
 }
 
-.new-box select {
+.new-box input {
   font-size: 16px;
   padding: 5px;
   border-radius: 5px;
-  width: 60px;
+  width: 250px;
   border: 1px solid #ccc;
+}
+
+.new-box a {
+  
+  align-self:  flex-end;
+  background: green;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.new-box div{
+  display: flex;
+  flex-direction: row;
+}
+.new-box	p{
+  padding-top: 10px;
+  padding-right: 70px;
 }
 
