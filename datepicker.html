@@ -6,31 +6,29 @@
     <title>Custom Datepicker</title>
     <link rel="stylesheet" href="datepicker.css" />
     <script type="module" src="datepicker.js"></script>
-    <style>
-        .container {
-            display: flex; /* Use flexbox for side-by-side layout */
-            gap: 20px; /* Add some spacing between the boxes */
-        }
-
-        .datepicker-container, .additional-box { /* Style both containers similarly */
-            border: 1px solid #ccc;
-            padding: 10px;
-            border-radius: 5px; /* Optional rounded corners */
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
-        }
-        .additional-box{
-            width: fit-content;
-        }
-
-    </style>
 </head>
 <body>
+    <div class="topbar">
+        <div class="logo">
+            <img src="images/mainlogo.png" alt="Logo" class="logo-img"> <!-- Replace with your logo -->
+        </div>
+        <div class="navbar">
+            <a href="home.html">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <a href="#">FAQ</a>
+            <a href="mainpage.html">Login</a>
+        </div>
+    </div>
+
     <img src="your-image.jpg" alt="Calendar Image" class="calendar-image" />
-    <div class="container"> <div class="datepicker-container">
+    
+    <div class="container">
+        <div class="datepicker-container">
             <div class="datepicker">
                 <div class="datepicker-header">
                     <button class="prev">Prev</button>
-
                     <div>
                         <select class="month-input">
                             <option>January</option>
@@ -48,7 +46,6 @@
                         </select>
                         <input type="number" class="year-input" />
                     </div>
-
                     <button class="next">Next</button>
                 </div>
                 <div class="days">
@@ -112,49 +109,62 @@
                     <select class="mins">
                         <option>00</option>
                         <option>30</option>
-
                     </select>
                     <select class="ampm">
                         <option>AM</option>
                         <option>PM</option>
                     </select>
-
                     <button class="apply">Apply</button>
                 </div>
-                </div>
+            </div>
         </div>
-        <div class="pax-select">
-            <p>This is an additional box next to the datepicker. You can add any content you like here, such as instructions, related information, or even another interactive element.</p>
+
+        <div class="boxb">
+            <div class="pax-select">
+                <p>SELECT THE NUMBER OF TICKETS YOU NEED</p>
+
+                <label for="child-count">Child:</label>
+                <select id="child-count" class="pax-select-dropdown">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label for="adult-count">Adult:</label>
+                <select id="adult-count" class="pax-select-dropdown">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label for="elderly-count">Elderly:</label>
+                <select id="elderly-count" class="pax-select-dropdown">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
             
-            <label for="child-count">Child:</label>
-            <select id="child-count" class="pax-select-dropdown">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-    
-            <label for="adult-count">Adult:</label>
-            <select id="adult-count" class="pax-select-dropdown">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-    
-            <label for="elderly-count">Elderly:</label>
-            <select id="elderly-count" class="pax-select-dropdown">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
+            <div class="new-box">
+                <p>Payment :</p>
+                <label for="extra-option">Extra Option:</label>
+                <select id="extra-option" class="pax-select-dropdown">
+                    <option value="0">None</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+            </div>
         </div>
     </div>
 </body>
