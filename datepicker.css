@@ -66,7 +66,7 @@
     justify-content: center;
     align-items: center;
     height: 1250px;
-    flex-direction: column;
+    flex-direction: row;
     font-family: Arial, sans-serif;
     min-height: 100vh;
     margin: 0;
@@ -83,127 +83,16 @@
     
 }
 
-.datepicker-container {
-    display: flex;
-    justify-content: center; /* Center the datepicker inside its container */
-    align-items: flex-start;
-    width: 100%; /* Ensure it takes up available width */
-    max-width: 750px; /* Max width for the datepicker */
-}
-  
-  .datepicker {
-    width: 750px; /* Calendar takes up 40% of the viewport width */
-    height: 500px; /* Adjusting the height to keep the calendar proportionate */
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    
-  }
-  
-  .datepicker button {
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background: transparent;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: 0.3s;
-    touch-action: manipulation;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  
-  .days,
-  .dates {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr); /* 7 columns for the days of the week */
-    gap: 5px;
-    margin-top: 10px;
-    flex-grow: 1;
-    justify-items: center; /* Center the buttons */
-  }
 
-  .dates button:hover {
-    background-color: lightgray;
-    color: white; /* Ensures text remains visible */
-    transition: background-color 0.3s ease; /* Smooth transition */
-}
-  .days span {
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-  }
-  
-  .dates button {
-    color: gray;
-    font-size: 14px;
-    aspect-ratio: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-
-  
-  .dates button.selected {
-    background: black;
-    color: white;
-  }
-
-
-  
-  .datepicker-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .datepicker-header select,
-  .datepicker-header input {
-    font-size: 16px;
-    padding: 5px;
-    border-radius: 5px;
-  }
-  
-  .datepicker-header button {
-    color: grey;
-    padding: 5px;
-  }
-  
-  .datepicker-header button:hover {
-    color: black;
-  }
-  
-  .datepicker-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  .datepicker-footer button {
-    background: lightgray;
-    padding: 10px;
-  }
-  
-  .datepicker-footer button.apply {
-    background: green;
-    color: white;
-  }
   
   .calendar-image {
+    bottom: 14px;
     display: flex;
     width: 800px;  /* Set the image width to 1200px */
-    height: 300px;  /* Set the image height to 800px */
+    height: 460px;  /* Set the image height to 800px */
     border: 2px solid black;  /* Add a black border around the image */
     margin-bottom: 20px;  /* Add spacing between the image and the calendar */
+    margin-right: 50px;
   }
 
 
