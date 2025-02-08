@@ -13,12 +13,21 @@
     flex-direction: column;
   }
   
-  .datepicker-container {
+  .container {
+    display: flex; /* Use flexbox for side-by-side layout */
+    justify-content: center; /* Center both boxes horizontally */
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px; /* Add spacing between the boxes */
+    width: 100%;
+}
+
+.datepicker-container {
     display: flex;
-    position: relative;
-    align-self: flex-start;
-    padding-left: 500px;
-  }
+    justify-content: center; /* Center the datepicker inside its container */
+    align-items: flex-start;
+    width: 100%; /* Ensure it takes up available width */
+    max-width: 750px; /* Max width for the datepicker */
+}
   
   .datepicker {
     width: 750px; /* Calendar takes up 40% of the viewport width */
@@ -130,4 +139,30 @@
     border: 2px solid black;  /* Add a black border around the image */
     margin-bottom: 20px;  /* Add spacing between the image and the calendar */
   }
-  
+
+
+.pax-select {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px; /* Set a fixed width for the pax-select box */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pax-select label {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.pax-select select {
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 60px;
+    border: 1px solid #ccc;
+}
+
+
