@@ -159,7 +159,7 @@
   flex-direction: column;
   gap: 10px;
   width: 300px; /* Set a fixed width for the new box */
-  height:193px;
+  height: 210px;
   padding: 20px;
   border: 1px solid black;
   border-radius: 10px;

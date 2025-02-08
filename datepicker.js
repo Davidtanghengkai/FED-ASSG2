@@ -7,14 +7,25 @@ document.addEventListener("DOMContentLoaded", function () {
         adult: 49,
         senior: 39
     };
+    
+    // Discount codes
+    const DISCOUNTS = {
+        "zoo10": 0.10 // 10% off
+    };
 
-    // Get references to dropdowns and total price display
+    // Get references to dropdowns, total price display, discount input, and apply button
     const childSelect = document.getElementById("child-count");
     const adultSelect = document.getElementById("adult-count");
     const seniorSelect = document.getElementById("elderly-count");
     const totalPriceText = document.getElementById("total-price-text");
-
-    if (!childSelect || !adultSelect || !seniorSelect || !totalPriceText) {
+    const discountInput = document.querySelector("input[placeholder='Discount Coupon']");
+    const applyButton = document.createElement("button");
+    applyButton.textContent = "Apply";
+    discountInput.insertAdjacentElement("afterend", applyButton);
+    
+    let discountApplied = false;
+    
+    if (!childSelect || !adultSelect || !seniorSelect || !totalPriceText || !discountInput || !applyButton) {
         console.error("One or more elements are missing from the HTML.");
         return; // Stops execution if elements are missing
     }
@@ -29,13 +40,30 @@ document.addEventListener("DOMContentLoaded", function () {
         const numSeniors = parseInt(seniorSelect.value) || 0;
 
         // Calculate total price
-        const totalPrice = (numChildren * PRICES.child) +
-                           (numAdults * PRICES.adult) +
-                           (numSeniors * PRICES.senior);
-
-        // Update the price display
-        totalPriceText.innerHTML = `Price: $${totalPrice}`;
+        let totalPrice = (numChildren * PRICES.child) +
+                         (numAdults * PRICES.adult) +
+                         (numSeniors * PRICES.senior);
+        
+        // Apply discount if valid and applied
+        if (discountApplied) {
+            const discountCode = discountInput.value.trim().toLowerCase();
+            if (DISCOUNTS[discountCode]) {
+                const discountAmount = totalPrice * DISCOUNTS[discountCode];
+                totalPrice -= discountAmount;
+                totalPriceText.innerHTML = `Price: $${totalPrice.toFixed(2)} (Discount Applied!)`;
+            } else {
+                totalPriceText.innerHTML = `Price: $${totalPrice.toFixed(2)}`;
+            }
+        } else {
+            totalPriceText.innerHTML = `Price: $${totalPrice.toFixed(2)}`;
+        }
     }
+
+    // Apply discount when button is clicked
+    applyButton.addEventListener("click", function () {
+        discountApplied = true;
+        updateTotalPrice();
+    });
 
     // Add event listeners to dropdowns
     childSelect.addEventListener("change", updateTotalPrice);
