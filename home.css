@@ -21,7 +21,7 @@ body {
   display: flex;
   justify-content: center;      /* Centers the main content (logo and navbar) */
   align-items: center;
-  background-color: green;
+  background-color: #5E8A75;
   color: white;
   padding: 15px 50px;
   width: 100%;
@@ -39,6 +39,19 @@ body {
   text-decoration: none;
   margin: 0 15px;
   font-size: 16px;
+}
+
+.logo {
+  width: 450px;
+  height: 250px;
+  background-image: url('images/mainlogo.png');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 50px; /* Adds space between logo and box */
+  margin-top: 60px;
+  display: block;
+  border: 5px solid #AA9C89;
+  border-radius: 10px;
 }
 
 .navbar a:hover {
@@ -70,20 +83,20 @@ body {
 
   .gamesbar {
     text-align: center;
-    margin-top: 100px; /* 50px away from the topbar */;
+    margin-top: 0px; /* 50px away from the topbar */;
 }
 
 .gamesbar a {
     display: inline-block;
     width: 1000px; /* Set a fixed width */
     padding: 20px; /* Increase padding */
-    background-color: black; /* Black background */
+    background-color: #E3D3BD; /* Black background */
     color: white; /* White text */
     font-size: 16px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    border: 2px solid black; /* Black border */
+    border: 2px solid #AA9C89; /* Black border */
 }
 
 .gamesbar a:hover {
@@ -99,7 +112,7 @@ body {
   gap: 20px; /* Space between sections */
   padding: 20px; /* Padding around the container */
   align-items: center; /* Center the sections */
-  background-color: #f8f8e8;
+  background-color: beige;
 }
 
 
@@ -120,7 +133,7 @@ body {
   display: flex;
   align-items: center; /* Vertically center content */
   justify-content: center; /* Horizontally center content */
-  background-color: white;
+  background-color: #E3D3BD;
   border: 1px solid #ccc;
   border-radius: 10px;
   width: 1100px; /* Fixed width */
@@ -129,7 +142,7 @@ body {
   overflow: hidden;
   transition: transform 0.2s ease;
   gap: 10px; /* Adds space between image and text */
-  border: 2px solid black; 
+  border: 2px #AA9C89; 
 }
 
 .photo {
@@ -151,7 +164,7 @@ body {
 .text {
   font-size: 26px; /* Increased font size */
   font-weight: bold; /* Bolder font */
-  color: #333;
+  color: #6D5044;
   white-space: nowrap;
   overflow: hidden;
   

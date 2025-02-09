@@ -13,6 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
         "zoo10": 0.10 // 10% off
     };
 
+    console.log("Full URL:", window.location.href);
+    console.log("Extracted zoo parameter:", getQueryParam('zoo'));
+    console.log("Calendar image element found:", document.querySelector(".calendar-image"));
+
+
     // Get references to dropdowns, total price display, discount input, and apply button
     const childSelect = document.getElementById("child-count");
     const adultSelect = document.getElementById("adult-count");

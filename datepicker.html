@@ -21,10 +21,37 @@
         </div>
     </div>
 
-    <img src="your-image.jpg" alt="Calendar Image" class="calendar-image" />
-    
-    
+    <script>
+        // Function to get the 'zoo' parameter from the URL
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
 
+        // Get the zoo value from the URL
+        const zooValue = getQueryParam('zoo');
+
+        // Map zoo values to corresponding image paths
+        let imageSrc = "images/default.jpg"; // Default image if no match
+
+        if (zooValue === "1") {
+            imageSrc = "images/SingaporeZoo.jpg";
+        } else if (zooValue === "2") {
+            imageSrc = "images/nsafari.jpg";
+        } else if (zooValue === "3") {
+            imageSrc = "images/riverwonders.jpg";
+        } else if (zooValue === "4") {
+            imageSrc = "images/birdpara.jpg";
+        }
+
+        // Update the image source in the HTML when the page loads
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector(".calendar-image").src = imageSrc;
+        });
+    </script>
+
+    <img src="images/mainlogo.png" alt="zooimage" class="calendar-image" />
+    
         <div class="boxb">
             <div class="pax-select">
                 <!DOCTYPE html><html lang="en"><head>

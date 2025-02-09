@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: green;
+    background-color: #5E8A75;
     color: white;
     padding: 15px 50px;
     width: 100%;
@@ -65,7 +65,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 1250px;
+    height: 750px;
     flex-direction: row;
     font-family: Arial, sans-serif;
     min-height: 100vh;
