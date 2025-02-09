@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
         localStorage.removeItem("isLoggedIn");
         localStorage.removeItem("userEmail");
-        window.location.href = "login.html";
+        window.location.href = "../html/login.html";
       });
     }
   });

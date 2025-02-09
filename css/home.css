@@ -17,7 +17,7 @@ body {
 
 /* Topbar Styles */
 .topbar {
-  position: relative;           /* Establishes a containing block for absolutely positioned children */
+  position: fixed;           /* Establishes a containing block for absolutely positioned children */
   display: flex;
   justify-content: center;      /* Centers the main content (logo and navbar) */
   align-items: center;

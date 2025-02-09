@@ -1,7 +1,7 @@
 const images = [
-    { src: "images/game1.jpg", link: "game1.html" },
-    { src: "images/game2.jpg", link: "game2.html" },
-    { src: "images/game3.jpg", link: "game3.html" }
+    { src: "images/game1.jpg", link: "../html/game1.html" },
+    { src: "images/game2.jpg", link: "../html/game2.html" },
+    { src: "images/game3.jpg", link: "../html/game3.html" }
   ];
   
   let currentIndex = 0;
