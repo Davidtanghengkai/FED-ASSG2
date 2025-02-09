@@ -10,16 +10,19 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
     
   }
   
   .datepicker-container {
     position: relative;
+    align-self: flex-start;
+    padding-left: 200px;
   }
   
   .datepicker {
-    width: 30vw; /* Calendar takes up 40% of the viewport width */
-    height: 40vh; /* Adjusting the height to keep the calendar proportionate */
+    width: 40vw; /* Calendar takes up 40% of the viewport width */
+    height: 50vh; /* Adjusting the height to keep the calendar proportionate */
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -81,7 +84,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom:15px;
   }
   
   .datepicker-header select,
@@ -119,8 +122,8 @@
   
   .calendar-image {
     display: flex;
-    width: 800px;  /* Set the image width to 1200px */
-    height: 300px;  /* Set the image height to 800px */
+    width: 600px;  /* Set the image width to 1200px */
+    height: 200px;  /* Set the image height to 800px */
     border: 2px solid black;  /* Add a black border around the image */
     margin-bottom: 20px;  /* Add spacing between the image and the calendar */
   }
