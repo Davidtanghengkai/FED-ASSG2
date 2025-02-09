@@ -4,54 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Custom Datepicker</title>
-    <link rel="stylesheet" href="datepicker.css" />
+    <link rel="stylesheet" href="../css/datepicker.css" />
 </head>
 <body>
     <div class="topbar">
         <div class="logo">
-            <img src="images/mainlogo.png" alt="Logo" class="logo-img"> <!-- Replace with your logo -->
+            <img src="../images/mainlogo.png" alt="Logo" class="logo-img"> <!-- Replace with your logo -->
         </div>
         <div class="navbar">
             <a href="home.html">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-            <a href="#">FAQ</a>
-            <a href="mainpage.html">Login</a>
+            <a href="gameselect.html">Games</a>
+            <a href="mainpage.html">logout</a>
         </div>
     </div>
 
-    <script>
-        // Function to get the 'zoo' parameter from the URL
-        function getQueryParam(name) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(name);
-        }
-
-        // Get the zoo value from the URL
-        const zooValue = getQueryParam('zoo');
-
-        // Map zoo values to corresponding image paths
-        let imageSrc = "images/default.jpg"; // Default image if no match
-
-        if (zooValue === "1") {
-            imageSrc = "images/SingaporeZoo.jpg";
-        } else if (zooValue === "2") {
-            imageSrc = "images/nsafari.jpg";
-        } else if (zooValue === "3") {
-            imageSrc = "images/riverwonders.jpg";
-        } else if (zooValue === "4") {
-            imageSrc = "images/birdpara.jpg";
-        }
-
-        // Update the image source in the HTML when the page loads
-        document.addEventListener("DOMContentLoaded", function () {
-            document.querySelector(".calendar-image").src = imageSrc;
-        });
-    </script>
-
-    <img src="images/mainlogo.png" alt="zooimage" class="calendar-image" />
+    <img src="../images/riverwonders.jpg" alt="Calendar Image" class="calendar-image" />
     
+    
+
         <div class="boxb">
             <div class="pax-select">
                 <!DOCTYPE html><html lang="en"><head>
@@ -128,11 +98,11 @@
                 <div>
                     <p id="total-price-text">Price: </p>
 
-                    <a href="">Buy Tickets</a>
+                    <a href="reciept.html">Buy Tickets</a>
                 </div>
             </div>
         </div>
     </div>
-    <script src="datepicker.js"></script>
+    <script src="../js/datepicker.js"></script>
 </body>
 </html>

@@ -46,7 +46,7 @@ async function loginUser() {
     localStorage.setItem("userEmail", email);
 
     setTimeout(() => {
-      window.location.href = "home.html";
+      window.location.href = "../html/home.html";
     }, 2000);
   } catch (error) {
     console.error("Error:", error);

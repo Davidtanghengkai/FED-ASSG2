@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Datepicker</title>
+    <link rel="stylesheet" href="../css/datepicker.css" />
+</head>
+<body>
+    <div class="topbar">
+        <div class="logo">
+            <img src="../images/mainlogo.png" alt="Logo" class="logo-img"> <!-- Replace with your logo -->
+        </div>
+        <div class="navbar">
+            <a href="home.html">Home</a>
+            <a href="gameselect.html">Games</a>
+            <a href="mainpage.html">logout</a>
+        </div>
+    </div>
+
+<<<<<<< HEAD:datepicker.html
+    <script>
+        // Function to get the 'zoo' parameter from the URL
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+=======
+    <img src="../images/SingaporeZoo.jpeg" alt="Calendar Image" class="calendar-image" />
+    
+    
+>>>>>>> 522ec310ad00e3688ed950b3235311f5bcb89a63:html/datepicker-sgzoo.html
+
+        // Get the zoo value from the URL
+        const zooValue = getQueryParam('zoo');
+
+        // Map zoo values to corresponding image paths
+        let imageSrc = "images/default.jpg"; // Default image if no match
+
+        if (zooValue === "1") {
+            imageSrc = "images/SingaporeZoo.jpg";
+        } else if (zooValue === "2") {
+            imageSrc = "images/nsafari.jpg";
+        } else if (zooValue === "3") {
+            imageSrc = "images/riverwonders.jpg";
+        } else if (zooValue === "4") {
+            imageSrc = "images/birdpara.jpg";
+        }
+
+        // Update the image source in the HTML when the page loads
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector(".calendar-image").src = imageSrc;
+        });
+    </script>
+
+    <img src="images/mainlogo.png" alt="zooimage" class="calendar-image" />
+    
+        <div class="boxb">
+            <div class="pax-select">
+                <!DOCTYPE html><html lang="en"><head>
+                    <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <title>jQuery UI Datepicker - Default functionality</title>
+                    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+                    <link rel="stylesheet" href="/resources/demos/style.css">
+                    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+                    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+                    <script>
+                    $( function() {
+                      $( "#datepicker" ).datepicker();
+                    } );
+                    </script>
+                  </head>
+                  <body>
+                   
+                  <p>Date: <input type="text" id="datepicker"></p>
+                   
+                   
+                   
+                   
+                  </body></html>
+                <p>SELECT THE NUMBER OF TICKETS YOU NEED</p>
+            
+                <div>
+                    <h1>Childs   :    $29</h1>
+                    
+                    <select id="child-count" class="pax-select-dropdown">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    
+                </div>
+            
+                <div>
+                    <h1 >Adults :        $49</h1>
+                    <select id="adult-count" class="pax-select-dropdown">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    
+                </div>
+            
+                <div>
+                    <h1>Senior :      $39  </h1>
+                    <select id="elderly-count" class="pax-select-dropdown">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    
+                </div>
+            </div>
+            
+
+            
+            <div class="new-box">
+                <p>Payment :</p>
+                <input type="text" placeholder="Discount Coupon">
+                
+                <div>
+                    <p id="total-price-text">Price: </p>
+
+                    <a href="reciept.html">Buy Tickets</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/datepicker.js"></script>
+</body>
+</html>
