@@ -1,0 +1,41 @@
+.mole {
+    background-image: url(http://365psd.com/images/thumbs/7d7/cartoon-mole-52006.png);
+    width: 250px;
+    height: 188px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 50ms;
+    position: absolute;
+    overflow: hidden;
+  }
+  
+  #score, #timer{
+    float: right;
+    width: 50px;
+    height: 25px;
+    font-size: 25px;
+    font-family: "Comic Sans MS", sans-serif;
+  }
+  #timer{ float: left; }
+  #score:before{ content:"Score:";}
+  
+  #wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  button{
+    position:absolute;
+    left:0px;
+    top:0px;
+  }
+  
+  body,
+  html {
+    color:orange;
+    text-shadow: 1px 1px 6px #000;
+    height: 100%;
+    background: linear-gradient(to bottom, #627d4d 0%, #1f3b08 100%);
+  }

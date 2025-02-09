@@ -1,100 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Custom Datepicker</title>
     <link rel="stylesheet" href="datepicker.css" />
-    <script type="module" src="datepicker.js"></script>
-  </head>
-  <body>
-    <img src="your-image.jpg" alt="Calendar Image" class="calendar-image" />
-    <div class="datepicker-container">
-      <!-- Add the image above the calendar -->
-      
-      
-      <div class="datepicker">
-        <!-- .datepicker-header -->
-        <div class="datepicker-header">
-          <button class="prev">Prev</button>
-
-          <div>
-            <select class="month-input">
-              <option>January</option>
-              <option>February</option>
-              <option>March</option>
-              <option>April</option>
-              <option>May</option>
-              <option>June</option>
-              <option>July</option>
-              <option>August</option>
-              <option>September</option>
-              <option>October</option>
-              <option>November</option>
-              <option>December</option>
-            </select>
-            <input type="number" class="year-input" />
-          </div>
-
-          <button class="next">Next</button>
+</head>
+<body>
+    <div class="topbar">
+        <div class="logo">
+            <img src="images/mainlogo.png" alt="Logo" class="logo-img"> <!-- Replace with your logo -->
         </div>
-        <!-- /.datepicker-header -->
-
-        <!-- .days -->
-        <div class="days">
-          <span>Sun</span>
-          <span>Mon</span>
-          <span>Tue</span>
-          <span>Wed</span>
-          <span>Thu</span>
-          <span>Fri</span>
-          <span>Sat</span>
+        <div class="navbar">
+            <a href="home.html">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <a href="#">FAQ</a>
+            <a href="mainpage.html">Login</a>
         </div>
-        <!-- /.days -->
-
-        <!-- .dates -->
-        <div class="dates">
-          <button disabled>1</button>
-          <button disabled>2</button>
-          <button disabled>3</button>
-          <button disabled>4</button>
-          <button disabled>5</button>
-          <button>6</button>
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
-          <button class="selected">10</button>
-          <button>11</button>
-          <button>12</button>
-          <button class="today">13</button>
-          <button>14</button>
-          <button>15</button>
-          <button>16</button>
-          <button>17</button>
-          <button>18</button>
-          <button>19</button>
-          <button>20</button>
-          <button>21</button>
-          <button>22</button>
-          <button>23</button>
-          <button>24</button>
-          <button>25</button>
-          <button>26</button>
-          <button>27</button>
-          <button>28</button>
-          <button>29</button>
-          <button>30</button>
-          <button>31</button>
-        </div>
-        <!-- /.dates -->
-
-        <!-- .datepicker-footer -->
-        <div class="datepicker-footer">
-          <button class="cancel">Cancel</button>
-          <button class="apply">Apply</button>
-        </div>
-        <!-- /.datepicker-footer -->
-      </div>
     </div>
-  </body>
+
+    <img src="your-image.jpg" alt="Calendar Image" class="calendar-image" />
+    
+    
+
+        <div class="boxb">
+            <div class="pax-select">
+                <!DOCTYPE html><html lang="en"><head>
+                    <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <title>jQuery UI Datepicker - Default functionality</title>
+                    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+                    <link rel="stylesheet" href="/resources/demos/style.css">
+                    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+                    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+                    <script>
+                    $( function() {
+                      $( "#datepicker" ).datepicker();
+                    } );
+                    </script>
+                  </head>
+                  <body>
+                   
+                  <p>Date: <input type="text" id="datepicker"></p>
+                   
+                   
+                   
+                   
+                  </body></html>
+                <p>SELECT THE NUMBER OF TICKETS YOU NEED</p>
+            
+                <div>
+                    <h1>Childs   :    $29</h1>
+                    
+                    <select id="child-count" class="pax-select-dropdown">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    
+                </div>
+            
+                <div>
+                    <h1 >Adults :        $49</h1>
+                    <select id="adult-count" class="pax-select-dropdown">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    
+                </div>
+            
+                <div>
+                    <h1>Senior :      $39  </h1>
+                    <select id="elderly-count" class="pax-select-dropdown">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    
+                </div>
+            </div>
+            
+
+            
+            <div class="new-box">
+                <p>Payment :</p>
+                <input type="text" placeholder="Discount Coupon">
+                
+                <div>
+                    <p id="total-price-text">Price: </p>
+
+                    <a href="">Buy Tickets</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="datepicker.js"></script>
+</body>
 </html>
